@@ -1,20 +1,18 @@
 import { Messange as classMessage } from "./message.js";
 
-const newRandomNumbers = ()=>{   
-    try{
-        randomNumbers = words.map((arr)=>{
-        let length = arr.length;
-        return Math.floor(Math.random()*length);
-    });
-    }catch(e){
-        console.log("ha ocurrido un error");
-    }
+console.log("entre");   
+document.getElementById('button').onclick=newRandomMessage;
+let param = document.getElementById("param");
+param.style.display="none";
+
+function  newRandomMessage(){   
+    let newMessage = new classMessage(null,null,null,"happy message");
+    
+    param.innerHTML=newMessage.newMessage();
+    param.style.display="block";
+    
+
 }
 
-let newWord = ["finally"];
-const newMessage = new classMessage();
-newMessage.createNewStructure(newWord);
-console.log(newMessage.words);
-console.log(newMessage.newMessage());
 
 
